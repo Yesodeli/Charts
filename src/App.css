@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -36,3 +36,85 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
+
+/* ... (previous styles) ... */
+
+/* Style the container and list for the navigation */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 20px;
+  position: fixed; /* Fix the navigation at the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; /* Set a higher z-index to make sure it's above other content */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the individual navigation item (button) */
+.nav-item {
+  margin-right: 20px;
+}
+
+/* Style the link (button) */
+.nav-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #1e90ff;
+  border: 2px solid #1e90ff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  position: relative; /* Add position relative to allow positioning of pseudo-element */
+  overflow: hidden; /* Hide the overflow of the pseudo-element */
+}
+
+/* Hover effect for the link (button) */
+.nav-link:hover {
+  background-color: #fff; /* Change the background color to white when hovered */
+  color: #1e90ff; /* Change the text color to the blue tone when hovered */
+}
+
+/* Pseudo-element for the trailing effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 144, 255, 0.5); /* Semi-transparent blue tone */
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Make sure the pseudo-element doesn't interfere with the link */
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+/* Container for the content */
+.content-container {
+  margin-top: 70px; /* Add space below the fixed navigation */
+  display: flex;
+  justify-content: center;
+}
+
+/* ... (previous styles) ... */
+
+
+
+
+
+
